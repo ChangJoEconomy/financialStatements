@@ -15,13 +15,14 @@ def get_korea_stocks():
 
 def get_usa_stocks():
     # S&P500, NASDAQ, NYSE 데이터를 모두 불러오기
-    markets = ["S&P500", "NASDAQ", "NYSE"]
+    markets = ["NASDAQ", "NYSE"]
     all_stocks = []
 
     for market in markets:
         stocks = fdr.StockListing(market)
         stocks["Market"] = market  # 각 데이터에 시장 이름 추가
         stocks = stocks[["Name", "Symbol", "Market"]]
+        stocks = stocks.rename(columns={"Symbol": "Code"}) # Symbol 열을 Code로 이름 변경
         all_stocks.append(stocks)
 
     # 데이터 합치기
