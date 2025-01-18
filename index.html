@@ -14,22 +14,26 @@
             main {
                 padding-top: 10vh; /* 메인 콘텐츠 시작을 화면 높이 10% 아래로 */
             }
+             
             .input-group {
-                border-radius: 15px;
-                overflow: hidden;
+                position: relative;
+                border-radius: 15px; /* 검색바 전체 둥글게 */
+                overflow: visible; /* 내부 요소가 둥근 모서리를 넘지 않도록 */
                 border: 1px solid #ced4da;
+            }
+            .input-group-text {
+                background-color: transparent; /* 배경색 투명 */
+                border: none; /* 기본 테두리 제거 */
+                border-radius: 0; /* 텍스트 영역 둥근 모서리 제거 */
             }
             #search-bar {
                 border: none;
                 box-shadow: none;
+                border-radius: 15px; /* 검색창 자체의 radius 제거 */
             }
             #search-bar:focus {
-                outline: none;
+                outline: none; /* 포커스 시 기본 테두리 제거 */
                 box-shadow: none;
-            }
-            .input-group-text {
-                background-color: white;
-                border: none;
             }
             .card {
                 border: none !important;
@@ -37,6 +41,43 @@
             .card-footer {
                 background-color: white !important;
             }
+
+            /* 자동완성 창 */
+            .autocomplete {
+                position: absolute;
+                top: 100%; /* 검색창 바로 아래에 위치 */
+                left: 0;
+                width: 100%; /* 검색창과 동일한 너비 */
+                z-index: 1000;
+                background-color: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            /* 자동완성 항목 스타일 */
+            .autocomplete-item {
+                padding: 8px 12px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .autocomplete-item:last-child {
+                border-bottom: none;
+            }
+
+            .autocomplete-item i {
+                flex-shrink: 0; /* 아이콘 크기 고정 */
+            }
+
+            .autocomplete-item div.text-start {
+                flex-grow: 1; /* 왼쪽 컨텐츠가 여유 공간 차지 */
+            }
+
+            .autocomplete-item.active {
+                background-color: #f1f1f1;
+                color: #000;
+            }
+
         </style>
     </head> 
 
@@ -77,13 +118,13 @@
                             <!-- 검색창 -->
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-search"></i></span>
-                                <input type="text" id="search-bar" class="form-control" placeholder="검색...">
+                                <input type="text" id="search-bar" class="form-control" placeholder="검색..." autocomplete="off">
+                                <div class="autocomplete"></div>
                             </div>
 
                             <!-- 시장 데이터 -->
                             <div class="row justify-content-center mt-4" style="padding-top: 5vh;" id="index_data"></div>
-
-                            </div>                            
+                                                     
                         </div>
                     </section>
 
