@@ -1,0 +1,53 @@
+{
+    "한국": {
+        "코스피": {
+            "update_date": "2025-01-17",
+            "latest_value": 2523.55,
+            "change_rate": -0.16
+        },
+        "코스닥": {
+            "update_date": "2025-01-17",
+            "latest_value": 724.69,
+            "change_rate": 0.06
+        },
+        "코스피 200": {
+            "update_date": "2025-01-17",
+            "latest_value": 335.09,
+            "change_rate": -0.19
+        }
+    },
+    "미국": {
+        "다우존스": {
+            "update_date": "2025-01-17",
+            "latest_value": 43487.83,
+            "change_rate": 0.78
+        },
+        "나스닥": {
+            "update_date": "2025-01-17",
+            "latest_value": 19630.2,
+            "change_rate": 1.51
+        },
+        "S&P 500": {
+            "update_date": "2025-01-17",
+            "latest_value": 5996.66,
+            "change_rate": 1.0
+        }
+    },
+    "환율": {
+        "USD/KRW": {
+            "update_date": "2025-01-18",
+            "latest_value": 1456.01,
+            "change_rate": 0.19
+        },
+        "JPY/KRW": {
+            "update_date": "2025-01-17",
+            "latest_value": 9.35,
+            "change_rate": 1.2
+        },
+        "EUR/KRW": {
+            "update_date": "2025-01-17",
+            "latest_value": 1499.61,
+            "change_rate": 0.09
+        }
+    }
+}
